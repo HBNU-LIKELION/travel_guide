@@ -1,5 +1,30 @@
+{%load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test1</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'mainpage.css' %}">
+</head>
+<body>
+    
+<div class="header">
+    <nav>
+        <ul>
+            <li><a href="{% url 'login' %}">로그인</a></li>
+            <li><a href="{% url 'signup' %}">회원가입</a></li>
+        </ul>
+    </nav>
+</div>
+
 <form method="POST" action="{% url 'search' %}">
     {% csrf_token %}
-    <input type="text" name="sheet_name" placeholder="지역명 ex:서울">
-    <button type="submit">검색</button>
+    <div class="search-container">
+    <h2 class="search-container">지역을 입력하세요</h2>
+    <input class="search-container" type="text" name="sheet_name" placeholder="지역명 ex:서울">
+    <button class="search-container" type="submit">검색</button>
+</div>
 </form>
+
+</body>
+</html>
